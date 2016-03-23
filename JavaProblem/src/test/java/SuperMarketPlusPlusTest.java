@@ -22,6 +22,7 @@ public class SuperMarketPlusPlusTest {
 		checkItems.add(new Item("Sulfuras", 0, 80));
 		checkItems.add(new Item("Backstage Passes", 14, 21));
 		checkItems.add(new Item("Ginger Cake", 2, 5));
+		checkItems.add(new Item("Organic Bananas", 2, 8));
 		checkItemsByDays.add(checkItems);
 		//Day 2
 		checkItems = new ArrayList();
@@ -31,6 +32,7 @@ public class SuperMarketPlusPlusTest {
 		checkItems.add(new Item("Sulfuras", 0, 80));
 		checkItems.add(new Item("Backstage Passes", 13, 22));
 		checkItems.add(new Item("Ginger Cake", 1, 4));
+		checkItems.add(new Item("Organic Bananas", 1, 6));
 		checkItemsByDays.add(checkItems);
 		//Day 3
 		checkItems = new ArrayList();
@@ -40,58 +42,59 @@ public class SuperMarketPlusPlusTest {
 		checkItems.add(new Item("Sulfuras", 0, 80));
 		checkItems.add(new Item("Backstage Passes", 12, 23));
 		checkItems.add(new Item("Ginger Cake", 0, 3));
+		checkItems.add(new Item("Organic Bananas", 0, 4));
 		checkItemsByDays.add(checkItems);
 		//Day 4
 		checkItems = new ArrayList();
 		checkItems.add(new Item("Chicken", 1, 3));
 		checkItems.add(new Item("Sulfuras", 0, 80));
 		checkItems.add(new Item("Backstage Passes", 11, 24));
-		checkItems.add(new Item("Ginger Cake", -1, 1));
+		checkItems.add(new Item("Ginger Cake", -1, 0));
+		checkItems.add(new Item("Organic Bananas", -1, 0));
 		checkItemsByDays.add(checkItems);
 		//Day 5
 		checkItems = new ArrayList();
 		checkItems.add(new Item("Chicken", 0, 2));
 		checkItems.add(new Item("Sulfuras", 0, 80));
-		checkItems.add(new Item("Backstage Passes", 10, 25));
-		checkItems.add(new Item("Ginger Cake", -2, 0));
+		checkItems.add(new Item("Backstage Passes", 10, 26));
 		checkItemsByDays.add(checkItems);
 		//Day 6
 		checkItems = new ArrayList();
 		checkItems.add(new Item("Chicken", -1, 0));
 		checkItems.add(new Item("Sulfuras", 0, 80));
-		checkItems.add(new Item("Backstage Passes", 9, 27));
+		checkItems.add(new Item("Backstage Passes", 9, 28));
 		checkItemsByDays.add(checkItems);
 		//Day 7
 		checkItems = new ArrayList();
-		checkItems.add(new Item("Backstage Passes", 8, 29));
+		checkItems.add(new Item("Backstage Passes", 8, 30));
 		checkItemsByDays.add(checkItems);
 		//Day 8
 		checkItems = new ArrayList();
-		checkItems.add(new Item("Backstage Passes", 7, 31));
+		checkItems.add(new Item("Backstage Passes", 7, 32));
 		checkItemsByDays.add(checkItems);
 		//Day 9
 		checkItems = new ArrayList();
-		checkItems.add(new Item("Backstage Passes", 6, 33));
+		checkItems.add(new Item("Backstage Passes", 6, 34));
 		checkItemsByDays.add(checkItems);
 		//Day 10
 		checkItems = new ArrayList();
-		checkItems.add(new Item("Backstage Passes", 5, 35));
+		checkItems.add(new Item("Backstage Passes", 5, 37));
 		checkItemsByDays.add(checkItems);
 		//Day 11
 		checkItems = new ArrayList();
-		checkItems.add(new Item("Backstage Passes", 4, 38));
+		checkItems.add(new Item("Backstage Passes", 4, 40));
 		checkItemsByDays.add(checkItems);
 		//Day 12
 		checkItems = new ArrayList();
-		checkItems.add(new Item("Backstage Passes", 3, 41));
+		checkItems.add(new Item("Backstage Passes", 3, 43));
 		checkItemsByDays.add(checkItems);
 		//Day 13
 		checkItems = new ArrayList();
-		checkItems.add(new Item("Backstage Passes", 2, 44));
+		checkItems.add(new Item("Backstage Passes", 2, 46));
 		checkItemsByDays.add(checkItems);
 		//Day 14
 		checkItems = new ArrayList();
-		checkItems.add(new Item("Backstage Passes", 1, 47));
+		checkItems.add(new Item("Backstage Passes", 1, 49));
 		checkItemsByDays.add(checkItems);
 		//Day 15
 		checkItems = new ArrayList();
@@ -120,8 +123,10 @@ public class SuperMarketPlusPlusTest {
 				supermarket.getItems().remove(0);
 				supermarket.getItems().remove(0);
 			}
-			if (day==5){
+			if (day==4){
 				//Ginger cake is gone
+				supermarket.getItems().remove(3);
+				//Bananas are off
 				supermarket.getItems().remove(3);
 			}
 			if (day==6){
