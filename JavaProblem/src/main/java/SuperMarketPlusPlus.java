@@ -19,6 +19,7 @@ public class SuperMarketPlusPlus {
         items.add(new Item("Sulfuras", 0, 80));
         items.add(new Item("Backstage Passes", 15, 20));
         items.add(new Item("Ginger Cake", 3, 6));
+//        items.add(new Item("Organic Bananas", 3, 10));
     }
 
     public List<Item> getItems() {
@@ -46,7 +47,12 @@ public class SuperMarketPlusPlus {
                 {
                     if (!"Sulfuras".equals(items.get(i).getName()))
                     {
-                        items.get(i).setQuality(items.get(i).getQuality() - 1);
+                        if ("Organic Bananas".equals(items.get(i).getName())) {
+                            items.get(i).setQuality(items.get(i).getQuality() - 2);
+                        }
+                        else {
+                            items.get(i).setQuality(items.get(i).getQuality() - 1);
+                        }
                     }
                 }
             }
@@ -82,31 +88,35 @@ public class SuperMarketPlusPlus {
                 items.get(i).setSellIn(items.get(i).getSellIn() - 1);
             }
 
-            if (items.get(i).getSellIn() < 0)
+            checkSelInDate(i);
+        }
+    }
+
+    private void checkSelInDate(int i){
+        if (items.get(i).getSellIn() < 0)
+        {
+            if (!"Aged Brie".equals(items.get(i).getName()))
             {
-                if (!"Aged Brie".equals(items.get(i).getName()))
+                if (!"Backstage Passes".equals(items.get(i).getName()))
                 {
-                    if (!"Backstage Passes".equals(items.get(i).getName()))
+                    if (items.get(i).getQuality() > 0)
                     {
-                        if (items.get(i).getQuality() > 0)
+                        if (!"Sulfuras".equals(items.get(i).getName()))
                         {
-                            if (!"Sulfuras".equals(items.get(i).getName()))
-                            {
-                                items.get(i).setQuality(items.get(i).getQuality() - 1);
-                            }
+                            items.get(i).setQuality(items.get(i).getQuality() - 1);
                         }
-                    }
-                    else
-                    {
-                        items.get(i).setQuality(items.get(i).getQuality() - items.get(i).getQuality());
                     }
                 }
                 else
                 {
-                    if (items.get(i).getQuality() < 50)
-                    {
-                        items.get(i).setQuality(items.get(i).getQuality() + 1);
-                    }
+                    items.get(i).setQuality(items.get(i).getQuality() - items.get(i).getQuality());
+                }
+            }
+            else
+            {
+                if (items.get(i).getQuality() < 50)
+                {
+                    items.get(i).setQuality(items.get(i).getQuality() + 1);
                 }
             }
         }
