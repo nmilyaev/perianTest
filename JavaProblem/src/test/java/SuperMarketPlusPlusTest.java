@@ -60,7 +60,6 @@ public class SuperMarketPlusPlusTest {
 		checkItems.add(new Item("Chicken", -1, 0));
 		checkItems.add(new Item("Sulfuras", 0, 80));
 		checkItems.add(new Item("Backstage Passes", 9, 27));
-//		checkItems.add(new Item("Ginger Cake", -3, 0));
 		checkItemsByDays.add(checkItems);
 		//Day 7
 		checkItems = new ArrayList();
