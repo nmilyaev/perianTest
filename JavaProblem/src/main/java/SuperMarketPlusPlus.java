@@ -4,15 +4,14 @@ import java.util.List;
 
 public class SuperMarketPlusPlus {
 
-	private static List<Item> items = null;
+	private List<Item> items = null;
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		
-        System.out.println("Starting Supermarket Plus Plus");
-		
+    public SuperMarketPlusPlus() {
+        this.items = new ArrayList<>();
+        this.populateProductList();
+    }
+
+    private void populateProductList(){
         items = new ArrayList<Item>();
         items.add(new Item("Thermal Vest", 10, 20));
         items.add(new Item("Aged Brie", 2, 0));
@@ -20,13 +19,24 @@ public class SuperMarketPlusPlus {
         items.add(new Item("Sulfuras", 0, 80));
         items.add(new Item("Backstage Passes", 15, 20));
         items.add(new Item("Ginger Cake", 3, 6));
+    }
 
-        updateQuality();
+    public List<Item> getItems() {
+        return items;
+    }
+
+    /**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+        System.out.println("Starting Supermarket Plus Plus");
+        SuperMarketPlusPlus supermarket = new SuperMarketPlusPlus();
+		supermarket.updateQuality();
 }
 
 
-	
-    public static void updateQuality()
+    public void updateQuality()
     {
         for (int i = 0; i < items.size(); i++)
         {
